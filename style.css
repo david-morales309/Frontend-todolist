@@ -1,8 +1,7 @@
-/* Estilos Generales y Reseteo */
+/* RESET + BASE */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,23 +10,29 @@ body {
     min-height: 100vh;
 }
 
+/* TARJETA CENTRAL */
 .container {
-    background-color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(15px);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.15);
     width: 100%;
     max-width: 500px;
-    margin-top: 50px;
+    margin-top: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+/* TÍTULO */
 h1 {
     text-align: center;
-    color: #007bff;
-    margin-bottom: 30px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
-/* Estilos del Grupo de Entrada */
+/* INPUT + BOTÓN */
 .input-group {
     display: flex;
     margin-bottom: 25px;
@@ -35,28 +40,31 @@ h1 {
 
 #input-task {
     flex-grow: 1;
-    padding: 10px 15px;
-    border: 2px solid #ccc;
-    border-radius: 6px 0 0 6px;
-    font-size: 16px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    font-size: 15px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .input-group button {
-    background-color: #007bff;
+    background: #4a90e2;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    border-radius: 0 10px 10px 0;
     cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 16px;
+    transition: 0.3s;
+    font-size: 15px;
 }
 
 .input-group button:hover {
-    background-color: #0056b3;
+    background: #357ABD;
+    transform: scale(1.05);
 }
 
-/* Estilos de la Lista de Tareas */
+/* LISTA */
 .task-list {
     list-style: none;
     padding: 0;
@@ -66,37 +74,54 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e9ecef;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    transition: background-color 0.3s;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 14px 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-/* Estilo para Tareas Completadas (¡El TACHADO!) */
+.task-list li:hover {
+    transform: translateY(-3px);
+}
+
+/* TAREA COMPLETADA */
 .completed {
-    text-decoration: line-through; /* La clave para tachar el texto */
-    color: #6c757d;
-    background-color: #f8f9fa;
+    text-decoration: line-through;
+    color: #a1a1a1;
+    background: rgba(255, 255, 255, 0.3);
 }
 
-/* Estilos de los Botones de la Tarea */
+/* BOTONES ACCIONES */
 .task-actions button {
-    background-color: #dc3545;
-    color: white;
     border: none;
-    padding: 6px 10px;
+    padding: 7px 12px;
     margin-left: 5px;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    font-size: 13px;
+    transition: 0.2s;
 }
 
-.task-actions button:nth-child(1) { /* Estilo para el botón "Completar" */
-    background-color: #28a745;
+/* Botón completar */
+.task-actions button:nth-child(1) {
+    background-color: #28c76f;
+    color: white;
 }
 
-.task-actions button:hover {
-    opacity: 0.8;
+.task-actions button:nth-child(1):hover {
+    background-color: #22ac61;
 }
+
+/* Botón eliminar */
+.task-actions button:nth-child(2) {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+.task-actions button:nth-child(2):hover {
+    background-color: #d9363e;
+}
+
